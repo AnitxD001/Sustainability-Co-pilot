@@ -53,11 +53,7 @@ requirements.txt
 ## Setup
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-
-cp .env.example .env               # then edit .env and add your GROQ_API_KEY
 ```
 
 By default the project uses a local SQLite file (`./data/sustainability.db`) —
@@ -94,19 +90,6 @@ streamlit run app.py
 ```
 Open `http://localhost:8501`.
 
-## Notes on the Groq LLM integration
-
-- The API key is read from the `GROQ_API_KEY` environment variable only —
-  it is never hardcoded anywhere in this codebase. If a key is ever exposed
-  (committed, pasted in chat, etc.), rotate it immediately in the
-  [Groq console](https://console.groq.com/keys).
-- The chatbot and ESG report's executive summary both work by pulling
-  pre-computed metrics from the database (RAG-style) and handing them to the
-  LLM with an explicit instruction not to invent figures outside that
-  context. If `GROQ_API_KEY` isn't set, the chatbot page and report generator
-  degrade gracefully (clear warning message / computed-metrics-only report)
-  rather than failing silently.
-
 ## Testing notes
 
 Every module in this repo was run end-to-end against the generated synthetic
@@ -121,9 +104,4 @@ API call itself, since that environment has no outbound network access to
 chat completions format, so it should work as-is once you supply a real key,
 but it's worth a quick manual check on your end.
 
-## Future scope (not implemented)
-
-Per the original spec: live IoT sensor integration, ERP integration (SAP/Oracle),
-real-time logistics APIs, satellite-based monitoring, computer vision for waste
-segregation, carbon credit estimation, multi-company benchmarking, supplier ESG
-compliance monitoring, and a multi-agent AI assistant.
+made by Anitketan Suin, AI Intern
