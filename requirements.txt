@@ -1,0 +1,29 @@
+# Backend
+fastapi>=0.110
+uvicorn[standard]>=0.29
+
+# Database
+sqlalchemy>=2.0
+psycopg2-binary>=2.9      # PostgreSQL driver (used when DATABASE_URL points to Postgres)
+python-dotenv>=1.0
+
+# Data processing
+pandas>=2.0
+numpy>=1.26
+
+# Machine learning
+scikit-learn>=1.4
+xgboost>=2.0
+joblib>=1.3
+
+# Visualization
+plotly>=5.20
+
+# Frontend
+streamlit>=1.36           # 1.36+ required for st.navigation / st.Page
+
+# LLM
+requests>=2.31
+
+# Reports (PDF generation)
+reportlab>=4.0

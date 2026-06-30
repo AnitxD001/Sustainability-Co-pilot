@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.env
+data/
+models/*.joblib
+models/*.json
+reports/output/*.md
+reports/output/*.pdf
+.venv/
+venv/
+*.egg-info/
+.DS_Store
